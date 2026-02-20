@@ -20,23 +20,35 @@ export function InquiryForm({ sourcePage }: InquiryFormProps) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [note, setNote] = useState('')
 
+  function buildWhatsAppMessage() {
+    return [
+      'New Inquiry - Shambhavi Metal Alloys',
+      '',
+      `Source: ${sourcePage}`,
+      `Name: ${form.name}`,
+      `Company: ${form.company}`,
+      `Email: ${form.email}`,
+      `Phone: ${form.phone || 'Not provided'}`,
+      `Inquiry Type: ${form.inquiryType}`,
+      '',
+      'Message:',
+      form.message
+    ].join('\n')
+  }
+
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('loading')
     setNote('')
 
     try {
-      const res = await fetch('/api/inquiries', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, sourcePage })
-      })
-      const data = await res.json()
-      if (!res.ok || !data.success) {
-        throw new Error(data.message || 'Unable to submit your inquiry.')
-      }
+      const whatsappText = encodeURIComponent(buildWhatsAppMessage())
+      const whatsappUrl = `https://wa.me/919891047155?text=${whatsappText}`
+      const popup = window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+      if (!popup) throw new Error('Please allow popups to continue to WhatsApp.')
+
       setStatus('success')
-      setNote(data.message || 'Inquiry submitted successfully.')
+      setNote('WhatsApp opened with your inquiry details. Please send the message to complete submission.')
       setForm(initialState)
     } catch (err) {
       setStatus('error')
@@ -97,9 +109,11 @@ export function InquiryForm({ sourcePage }: InquiryFormProps) {
         onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
       />
       <button type="submit" className="primary-btn" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Sending...' : 'Send Inquiry'}
+        {status === 'loading' ? 'Opening...' : 'Send on WhatsApp'}
       </button>
-      <p className="text-sm text-muted">We respond to all inquiries within 24 hours. Your information is kept confidential.</p>
+      <p className="text-sm text-muted">
+        Your inquiry details will open in WhatsApp for direct submission to our team.
+      </p>
       {note ? (
         <p className={status === 'success' ? 'text-sm text-accent' : 'text-sm text-[#f29a9a]'}>{note}</p>
       ) : null}
