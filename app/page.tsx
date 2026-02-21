@@ -170,7 +170,7 @@ export default function HomePage() {
             <SectionHeader
               label="WHAT WE DO"
               title="Aluminium Alloy Ingots"
-              subtitle="We supply premium-grade aluminium alloy ingots - the essential raw material for automotive components, electrical parts, and industrial manufacturing. Our ingots meet BIS and ISO standards, sourced and quality-tested to serve India's most demanding production lines."
+              subtitle="We supply premium-grade aluminium alloy ingots - the essential raw material for automotive components, electrical parts, and industrial manufacturing. Our ingots meet ISO standards, sourced and quality-tested to serve India's most demanding production lines."
             />
             <div className="relative mt-8 min-h-[240px] overflow-hidden border border-border">
               <div

@@ -3,7 +3,7 @@ import { SiteShell } from '../../components/site-shell'
 const differentiators = [
   {
     title: 'Certified Quality',
-    text: 'Every ingot meets ISO and BIS standards. We provide chemical composition test certificates with every consignment. No exceptions.'
+    text: 'Every ingot meets ISO standards. We provide chemical composition test certificates with every consignment. No exceptions.'
   },
   {
     title: 'Reliable Supply',

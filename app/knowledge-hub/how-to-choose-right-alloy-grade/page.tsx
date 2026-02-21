@@ -29,7 +29,7 @@ export default function ArticleTwoPage() {
         </p>
         <ul className="list-disc space-y-3 pl-6 text-text">
           <li>
-            <strong>Indian Standard (IS) / BIS</strong> - Governed by the Bureau of Indian Standards.
+            <strong>Indian Standard (IS)</strong> - Governed by the Bureau of Indian Standards.
           </li>
           <li>
             <strong>Japanese Industrial Standard (JIS)</strong> - Common in Japanese OEM supply chains operating

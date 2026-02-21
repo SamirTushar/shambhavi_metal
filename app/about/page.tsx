@@ -4,7 +4,7 @@ import { SiteShell } from '../../components/site-shell'
 const valueCards = [
   {
     title: 'Quality Without Compromise',
-    text: 'Every ingot we supply meets ISO and BIS standards. We test every batch for chemical composition and mechanical properties before dispatch.'
+    text: 'Every ingot we supply meets ISO standards. We test every batch for chemical composition and mechanical properties before dispatch.'
   },
   {
     title: 'Relationships Over Transactions',
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 ISO Certified
               </span>
               <span className="inline-flex border border-accent bg-[#c9a84c1a] px-6 py-3 text-sm uppercase tracking-[1px] text-accent">
-                BIS Approved
+                Quality Assured
               </span>
             </div>
           </div>

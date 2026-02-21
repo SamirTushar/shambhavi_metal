@@ -94,7 +94,7 @@ export default function ArticleOnePage() {
             specified grade and will perform as expected in your casting process.
           </li>
           <li>
-            <strong>Supplier certifications</strong> - ISO 9001 and BIS certification indicate that the supplier
+            <strong>Supplier certifications</strong> - ISO 9001 certification indicates that the supplier
             follows standardized quality management practices.
           </li>
           <li>
