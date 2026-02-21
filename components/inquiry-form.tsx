@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 type InquiryFormProps = {
   sourcePage: string
+  showEmailButton?: boolean
 }
 
 const initialState = {
@@ -15,7 +16,7 @@ const initialState = {
   message: ''
 }
 
-export function InquiryForm({ sourcePage }: InquiryFormProps) {
+export function InquiryForm({ sourcePage, showEmailButton = false }: InquiryFormProps) {
   const [form, setForm] = useState(initialState)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [note, setNote] = useState('')
@@ -34,6 +35,36 @@ export function InquiryForm({ sourcePage }: InquiryFormProps) {
       'Message:',
       form.message
     ].join('\n')
+  }
+
+  function buildEmailBody() {
+    return [
+      'New Inquiry - Shambhavi Metal Alloys',
+      '',
+      `Source: ${sourcePage}`,
+      `Name: ${form.name}`,
+      `Company: ${form.company}`,
+      `Email: ${form.email}`,
+      `Phone: ${form.phone || 'Not provided'}`,
+      `Inquiry Type: ${form.inquiryType}`,
+      '',
+      'Message:',
+      form.message
+    ].join('\n')
+  }
+
+  function onEmailClick() {
+    if (!form.name || !form.company || !form.email || !form.inquiryType || !form.message) {
+      setStatus('error')
+      setNote('Please complete all required fields before sending on email.')
+      return
+    }
+
+    const subject = encodeURIComponent(`[${form.inquiryType}] ${form.company} - Website Inquiry`)
+    const body = encodeURIComponent(buildEmailBody())
+    window.location.href = `mailto:info@shambhavimetal.com?subject=${subject}&body=${body}`
+    setStatus('success')
+    setNote('Email draft opened. Please send it to complete submission.')
   }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -108,9 +139,16 @@ export function InquiryForm({ sourcePage }: InquiryFormProps) {
         value={form.message}
         onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
       />
-      <button type="submit" className="primary-btn" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Opening...' : 'Send on WhatsApp'}
-      </button>
+      <div className="flex flex-wrap gap-3">
+        <button type="submit" className="primary-btn" disabled={status === 'loading'}>
+          {status === 'loading' ? 'Opening...' : 'Send on WhatsApp'}
+        </button>
+        {showEmailButton ? (
+          <button type="button" onClick={onEmailClick} className="outline-btn">
+            Send on Email
+          </button>
+        ) : null}
+      </div>
       <p className="text-sm text-muted">
         Your inquiry details will open in WhatsApp for direct submission to our team.
       </p>

@@ -32,9 +32,9 @@ const leaders = [
     position: '60% top'
   },
   {
-    name: 'Wael Riad',
-    role: 'Engineer',
-    bio: "Wael brings technical rigour to Shambhavi's operations, ensuring that every alloy grade meets precise specifications from melting through final dispatch. With a sharp focus on process optimization and quality assurance, he works closely with clients to match the right aluminium alloy composition to their casting and manufacturing requirements.",
+    name: 'Engineer Wael Riad',
+    role: 'CEO',
+    bio: "Wael leads Shambhavi with over 15 years of international sourcing experience. His global procurement expertise strengthens supply reliability, ensures consistent alloy availability, and supports customer-specific manufacturing requirements.",
     image: "linear-gradient(140deg, rgba(15,15,15,0.22), rgba(15,15,15,0.12)), url('/images/WR.webp')",
     position: 'center top'
   }

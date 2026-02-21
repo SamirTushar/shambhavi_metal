@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { DataTable } from '../components/data-table'
 import { HeroCarousel } from '../components/hero-carousel'
 import { InquiryForm } from '../components/inquiry-form'
+import { ProcessShowcaseSlider } from '../components/process-showcase-slider'
 import { SectionHeader } from '../components/section-header'
 import { SiteShell } from '../components/site-shell'
 import { TestimonialCard } from '../components/testimonial-card'
@@ -28,15 +29,15 @@ const applications = [
   }
 ]
 
-const gradeColumns = ['Grade', 'Standard', 'Si (%)', 'Cu (%)', 'Key Property', 'Typical Use']
+const gradeColumns = ['Alloy', 'Standard', 'Cu', 'Si', 'Mg', 'Zn', 'Fe', 'Mn', 'Ni', 'Sn', 'Pb', 'Ti', 'Al']
 
 const gradeRows = [
-  ['ADC-12', 'JIS', '9.6-12.0', '1.5-3.5', 'Excellent castability', 'Automotive die-casting'],
-  ['ADC-10', 'JIS', '7.5-9.5', '2.0-4.0', 'Good pressure tightness', 'General engineering'],
-  ['AC4B', 'JIS', '7.0-10.0', '2.0-4.0', 'Wear resistance', 'Engine blocks'],
-  ['LM-6', 'BS', '10.0-13.0', '0.1 max', 'Corrosion resistance', 'Marine, electrical'],
-  ['LM-24', 'BS', '7.5-9.5', '3.0-4.0', 'High strength', 'Structural automotive'],
-  ['Custom', '-', 'As spec', 'As spec', 'Tailored', 'Per requirement']
+  ['ADC-12', 'JIS', '1.5-3.5', '9.6-12.0', '0.3 max', '1.0 max', '1.3 max', '0.5 max', '0.5 max', '0.2 max', '0.2 max', '0.3 max', 'Rem.'],
+  ['ADC-6', 'JIS', '0.1 max', '1.0 max', '2.5-4.0', '0.4 max', '0.8 max', '0.4-0.6', '0.1 max', '0.1 max', '0.1 max', '0.2 max', 'Rem.'],
+  ['LM-4', 'BS', '2.0-4.0', '4.0-6.0', '0.2 max', '0.5 max', '1.0 max', '0.2-0.6', '0.3 max', '0.1 max', '0.1 max', '0.2 max', 'Rem.'],
+  ['LM-6', 'BS', '0.1 max', '10.0-13.0', '0.1 max', '0.1 max', '0.6 max', '0.5 max', '0.1 max', '0.05 max', '0.1 max', '0.2 max', 'Rem.'],
+  ['LM-24', 'BS', '3.0-4.0', '7.5-9.5', '0.3 max', '3.0 max', '1.3 max', '0.5 max', '0.5 max', '0.2 max', '0.3 max', '0.2 max', 'Rem.'],
+  ['LM-25', 'BS', '0.2 max', '6.5-7.5', '0.2-0.6', '0.1 max', '0.5 max', '0.3 max', '0.1 max', '0.05 max', '0.1 max', '0.2 max', 'Rem.']
 ]
 
 const processSteps = [
@@ -60,7 +61,7 @@ const processSteps = [
 
 const reasons = [
   {
-    title: 'ISO & BIS Certified',
+    title: 'ISO Certified',
     text: 'Every batch tested and certified'
   },
   {
@@ -91,7 +92,9 @@ const customers = [
   'PAC',
   'Super Alloy Ltd.',
   'Altruistic Metal Pvt. Ltd.',
-  'JSB Industries Pvt. Ltd.'
+  'JSB Industries Pvt. Ltd.',
+  'Vinayak Industries',
+  'Mittalu Pvt. Ltd.'
 ]
 
 const leaders = [
@@ -108,9 +111,9 @@ const leaders = [
     image: '/images/SS.webp'
   },
   {
-    name: 'Wael Riad',
-    role: 'Engineer',
-    bio: 'Wael drives technical quality across alloy composition, testing, and process optimization for customer-specific production requirements.',
+    name: 'Engineer Wael Riad',
+    role: 'CEO',
+    bio: 'Wael leads Shambhavi with over 15 years of international sourcing experience, strengthening global supplier relationships and ensuring reliable procurement for customer-specific alloy requirements.',
     image: '/images/WR.webp'
   }
 ]
@@ -219,15 +222,8 @@ export default function HomePage() {
         <section className="section-spacing bg-section">
           <div className="container-wide">
             <SectionHeader label="OUR PROCESS" title="From Source to Delivery" />
-            <div className="relative mt-10 overflow-hidden border border-border bg-[#151515] p-5 md:p-7">
-              <div
-                className="absolute inset-0 bg-cover bg-center opacity-62"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(160deg, rgba(15,15,15,0.4), rgba(15,15,15,0.22)), url('/images/Gemini_Generated_Image_ksagdqksagdqksag.webp')"
-                }}
-              />
-              <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <ProcessShowcaseSlider />
+            <div className="relative mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {processSteps.map((step, i) => (
                 <article key={step.title} className="border border-border bg-card p-6">
                   <div className="mb-4 flex items-center gap-3">
@@ -240,7 +236,6 @@ export default function HomePage() {
                   <p className="mt-3 leading-7 text-muted">{step.text}</p>
                 </article>
               ))}
-              </div>
             </div>
           </div>
         </section>
@@ -320,7 +315,6 @@ export default function HomePage() {
                 author="Super Auto India Ltd."
               />
             </div>
-            <p className="mt-5 text-xs text-muted">Note: these are representative - to be confirmed by client.</p>
           </div>
         </section>
 
