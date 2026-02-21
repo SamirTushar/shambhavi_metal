@@ -12,7 +12,7 @@ export function SiteFooter() {
             Premium aluminium alloy ingot supplier serving automotive, electrical, and industrial manufacturers
             across India.
           </p>
-          <p className="mt-4 text-sm uppercase tracking-[1px] text-accent">ISO CERTIFIED | BIS APPROVED</p>
+          <p className="mt-4 text-sm uppercase tracking-[1px] text-accent">ISO CERTIFIED</p>
         </div>
 
         <div>
