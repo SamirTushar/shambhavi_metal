@@ -49,12 +49,12 @@ const promiseSteps = [
 const testimonials = [
   {
     quote: "Consistent quality and always on time. We've been sourcing from Shambhavi for years.",
-    client: 'Oswal Auto Tech'
+    client: 'Automotive Sector Customer'
   },
   {
     quote:
       'Their team understands our production requirements and ensures we never face a raw material shortage.',
-    client: 'Super Auto India Ltd.'
+    client: 'Electrical Components Customer'
   }
 ]
 
@@ -133,9 +133,6 @@ export default function WhyUsPage() {
                 </blockquote>
               ))}
             </div>
-            <p className="mt-6 text-center text-xs text-muted">
-              Note: These are representative testimonials. Client confirmation may be required for publication.
-            </p>
           </div>
         </section>
       </main>

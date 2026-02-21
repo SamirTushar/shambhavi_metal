@@ -87,14 +87,14 @@ const reasons = [
 ]
 
 const customers = [
-  'Oswal Auto Tech',
-  'Super Auto India Ltd.',
-  'PAC',
-  'Super Alloy Ltd.',
-  'Altruistic Metal Pvt. Ltd.',
-  'JSB Industries Pvt. Ltd.',
-  'Vinayak Industries',
-  'Mittalu Pvt. Ltd.'
+  'Automotive Sector Customer',
+  'Electrical Components Customer',
+  'Tier-1 Manufacturing Customer',
+  'Industrial Casting Customer',
+  'OEM Supply Chain Customer',
+  'General Engineering Customer',
+  'Regional Manufacturing Partner',
+  'Long-Term Production Client'
 ]
 
 const leaders = [
@@ -308,11 +308,11 @@ export default function HomePage() {
             <div className="mt-8 grid gap-5 md:grid-cols-2">
               <TestimonialCard
                 quote="Consistent quality and always on time. We've been sourcing from Shambhavi for years."
-                author="Oswal Auto Tech"
+                author="Automotive Sector Customer"
               />
               <TestimonialCard
                 quote="Their team understands our production requirements and ensures we never face a raw material shortage."
-                author="Super Auto India Ltd."
+                author="Electrical Components Customer"
               />
             </div>
           </div>
