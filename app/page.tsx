@@ -87,14 +87,14 @@ const reasons = [
 ]
 
 const customers = [
-  'Automotive Sector Customer',
-  'Electrical Components Customer',
-  'Tier-1 Manufacturing Customer',
-  'Industrial Casting Customer',
-  'OEM Supply Chain Customer',
-  'General Engineering Customer',
-  'Regional Manufacturing Partner',
-  'Long-Term Production Client'
+  'Oswal Auto Tech',
+  'Super Auto India Ltd.',
+  'PAC',
+  'Super Alloy Ltd.',
+  'Altruistic Metal Pvt. Ltd.',
+  'JSB Industries Pvt. Ltd.',
+  'Vinayak Industries',
+  'Mittalu Pvt. Ltd.'
 ]
 
 const leaders = [
