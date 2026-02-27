@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { navLinks } from './site-nav'
 
@@ -7,7 +8,16 @@ export function SiteFooter() {
       <div className="gold-separator" />
       <div className="container-wide grid gap-10 py-12 md:grid-cols-3">
         <div>
-          <h3 className="heading-serif text-2xl text-text">Shambhavi Metal Alloys</h3>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/images/logo/logo.webp"
+              alt="Shambhavi Metal Alloys logo"
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain"
+            />
+            <h3 className="heading-serif text-2xl text-text">Shambhavi Metal Alloys</h3>
+          </div>
           <p className="mt-4 max-w-[30ch] leading-7 text-muted">
             Premium aluminium alloy ingot supplier serving automotive, electrical, and industrial manufacturers
             across India.
